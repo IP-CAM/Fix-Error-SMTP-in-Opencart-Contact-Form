@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <name><![CDATA[Fix error SMTP mail]]></name>
+  <code><![CDATA[fix-mail-smtp-error]]></code>
+	<version><![CDATA[1.0]]></version>
+	<author><![CDATA[REDS PRAI]]></author>
+	<link><![CDATA[https://www.agenciaprai.com/]]></link>
+	<info>FIX --- Notice: Error: DATA not accepted from server!</info>
+		
+    <file path="catalog/controller/information/contact.php" error="skip">
+			<operation>
+				<search><![CDATA[$mail->setFrom($this->request->post['email']);]]></search>
+				<add position="replace">
+				<![CDATA[$mail->setFrom($this->config->get('config_email'));]]>
+				</add>
+			</operation>
+			<operation>
+				<search><![CDATA[$mail->setSender(html_entity_decode($this->request->post['name'], ENT_QUOTES, 'UTF-8'));]]></search>
+				<add position="after">
+				<![CDATA[$mail->setReplyTo($this->request->post['email']);
+			$mail->setSender($this->config->get('config_email'));]]>
+			</add>
+			</operation>
+    </file>
+</modification>
