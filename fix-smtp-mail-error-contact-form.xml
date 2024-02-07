@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <modification>
-  <name><![CDATA[Fix error SMTP mail]]></name>
-  <code><![CDATA[fix-mail-smtp-error]]></code>
+  <name><![CDATA[Fix error SMTP in contact form]]></name>
+  <code><![CDATA[fix-smtp-error-in-contact-form]]></code>
 	<version><![CDATA[1.0]]></version>
 	<author><![CDATA[REDS PRAI]]></author>
 	<link><![CDATA[https://www.agenciaprai.com/]]></link>
